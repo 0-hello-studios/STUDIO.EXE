@@ -5,14 +5,14 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700;800&family=Syne:wght@400;700;800&display=swap');
 :root{--bg:#08080b;--surface:#111115;--s2:#18181e;--s3:#1f1f27;--border:#252530;--bl:#35354a;--text:#c8c8d0;--dim:#4a4a58;--accent:#e8364f;--ag:rgba(232,54,79,.25);--a2:#22d3ee;--a2g:rgba(34,211,238,.25);--green:#10b981;--purple:#a855f7;--orange:#f59e0b;--kick:#e8364f;--snare:#f59e0b;--hihat:#22d3ee;--clap:#a855f7;--tom:#f97316;--perc:#06b6d4;--bass:#10b981;--synth:#ec4899;--ch1:#e8364f;--ch2:#22d3ee;--ch3:#a855f7;--ch4:#10b981}
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--bg);color:var(--text);font-family:'JetBrains Mono',monospace;height:100vh;overflow:hidden;user-select:none;display:flex;flex-direction:column}
+body{background:var(--bg);color:var(--text);font-family:'JetBrains Mono',monospace;height:100vh;overflow:hidden;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;display:flex;flex-direction:column}
 .workspace{flex:1;position:relative;overflow:auto;background:var(--bg)}
 .ws-inner{position:relative;min-width:3000px;min-height:2000px;background-image:radial-gradient(circle,rgba(255,255,255,.04) 1px,transparent 1px);background-size:24px 24px}
 .topbar{display:flex;align-items:center;height:36px;padding:0 10px;gap:6px;border-bottom:1px solid var(--border);flex-shrink:0;background:var(--surface);z-index:100}
 .topbar h1{font-family:'Syne',sans-serif;font-weight:800;font-size:15px;color:#fff;letter-spacing:-.5px}
 .topbar h1 span{color:var(--accent)}
 .sep{width:1px;height:16px;background:var(--border);margin:0 1px;flex-shrink:0}
-.abtn{background:var(--s2);border:1px solid var(--border);color:var(--dim);font-family:inherit;font-size:7px;font-weight:700;padding:2px 7px;border-radius:3px;cursor:pointer;transition:all .15s;letter-spacing:.4px;display:flex;align-items:center;gap:3px}
+.abtn{background:var(--s2);border:1px solid var(--border);color:var(--dim);font-family:inherit;font-size:7px;font-weight:700;padding:2px 7px;border-radius:3px;cursor:pointer;transition:all .15s;letter-spacing:.4px;display:flex;align-items:center;gap:3px;-webkit-touch-callout:none;touch-action:manipulation}
 .abtn:hover{border-color:var(--dim);color:var(--text)}
 .abtn .dot{width:5px;height:5px;border-radius:50%;flex-shrink:0}
 .xbtn{background:var(--s2);border:1px solid var(--green);color:var(--green);font-family:inherit;font-size:7px;font-weight:700;padding:2px 7px;border-radius:3px;cursor:pointer;transition:all .15s}
@@ -54,7 +54,7 @@ body{background:var(--bg);color:var(--text);font-family:'JetBrains Mono',monospa
 .bv::-webkit-slider-thumb{-webkit-appearance:none;width:5px;height:5px;border-radius:50%;background:var(--dim);cursor:pointer}
 .bsel{background:var(--s2);border:1px solid var(--border);color:var(--text);font-family:inherit;font-size:6px;padding:1px 2px;border-radius:2px;outline:none;width:46px;flex-shrink:0;cursor:pointer}
 .bsteps{display:flex;gap:1px;flex:1;min-width:0}
-.bstep{flex:1 1 0;height:24px;background:var(--s2);border:1px solid var(--border);border-radius:2px;cursor:pointer;transition:background .05s}
+.bstep{flex:1 1 0;height:24px;background:var(--s2);border:1px solid var(--border);border-radius:2px;cursor:pointer;transition:background .05s;-webkit-touch-callout:none;touch-action:manipulation}
 .bstep:hover{background:var(--s3)}
 .bstep.on{opacity:.85}.bstep.on:hover{opacity:1}
 .bstep.current{box-shadow:inset 0 -2px 0 var(--accent)}
@@ -104,10 +104,10 @@ body{background:var(--bg);color:var(--text);font-family:'JetBrains Mono',monospa
 .fxu.active .fxk input[type="range"]::-webkit-slider-thumb{background:var(--purple)}
 /* === PIANO === */
 .piano-kb{display:flex;position:relative;height:90px;border:1px solid var(--border);border-radius:3px;overflow-x:auto;overflow-y:hidden;min-width:0}
-.pk-w{min-width:22px;flex:1;background:#e8e8ec;border-right:1px solid #c0c0c8;cursor:pointer;transition:background .05s;position:relative;z-index:1}
+.pk-w{min-width:22px;flex:1;background:#e8e8ec;border-right:1px solid #c0c0c8;cursor:pointer;transition:background .05s;position:relative;z-index:1;-webkit-touch-callout:none;-webkit-user-select:none;touch-action:manipulation}
 .pk-w:last-child{border-right:none}.pk-w:hover{background:#d0d0d8}.pk-w.active{background:#f472b6}
 .pk-w .pkl{position:absolute;bottom:2px;left:50%;transform:translateX(-50%);font-size:5px;color:#999;font-weight:700}
-.pk-b{position:absolute;top:0;width:14px;height:55%;background:#1a1a22;border:1px solid #000;border-top:none;z-index:2;cursor:pointer;border-radius:0 0 2px 2px}
+.pk-b{position:absolute;top:0;width:14px;height:55%;background:#1a1a22;border:1px solid #000;border-top:none;z-index:2;cursor:pointer;border-radius:0 0 2px 2px;-webkit-touch-callout:none;-webkit-user-select:none;touch-action:manipulation}
 .pk-b:hover{background:#333}.pk-b.active{background:#f472b6}
 .piano-ctrl{display:flex;gap:6px;align-items:center;margin-bottom:4px;flex-wrap:wrap}
 .piano-ctrl .sst{color:#f472b6}
@@ -169,6 +169,8 @@ body{background:var(--bg);color:var(--text);font-family:'JetBrains Mono',monospa
 .bs_btn.soloed{background:#f59e0b!important;color:#000!important;border-color:#f59e0b!important}
 .bsel{background:var(--s3);border:1px solid var(--border);color:var(--text);font-family:inherit;font-size:5px;padding:0 1px;border-radius:2px;width:38px;outline:none}
 ::-webkit-scrollbar{width:5px;height:7px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--bl);border-radius:3px}::-webkit-scrollbar-corner{background:var(--bg)}
+/* iOS long-press prevention */
+button,select,input,.key,.bkey,.pk-w,.pk-b,.bstep,.wh,.wresize{-webkit-touch-callout:none;-webkit-user-select:none;touch-action:manipulation}
 /* Mobile */
 @media(max-width:768px){
   .topbar{height:auto;flex-wrap:wrap;padding:4px 6px;gap:3px}
@@ -2070,6 +2072,10 @@ const wsObs=new MutationObserver(muts=>{
 });
 wsObs.observe(wsI,{childList:true});
 
+// Prevent iOS long-press context menu on interactive elements
+document.addEventListener('contextmenu',e=>{
+  if(e.target.closest('.pk-w,.pk-b,.key,.bkey,.bstep,.wh,.pbtn,button'))e.preventDefault();
+});
 // Prevent rubber-band scroll on iOS
 document.body.addEventListener('touchmove',e=>{
   if(!e.target.closest('.wbody')&&!e.target.closest('.workspace'))e.preventDefault();
